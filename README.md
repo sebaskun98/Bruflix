@@ -4,7 +4,8 @@ Tema semelhante ao Netflix com Javascript e CSS. Feito como hobbie e para uso pe
 ## Video que usei para o carousel
 https://youtu.be/qBNOBIU5j0o
 
-##Series usadas
+## Series usadas
+
 Cory na casa branca:
 http://imaxhdpaginas.hol.es/cory-na-casa-branca/
 
