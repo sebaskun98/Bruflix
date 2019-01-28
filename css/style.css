@@ -107,6 +107,14 @@ iframe{
   margin-left: 5%;
 }
 
+@media only screen and (max-width: 900px) {
+  iframe{
+  margin-left: -5%;
+  height: 50% !important;
+  width: 50% !important;
+  }
+}
+
 .iframe2{
  margin: 0 auto;
  display:block;
@@ -141,6 +149,15 @@ hr {
   height: 100px !important;
   margin-top: 100% !important;
   margin-left: 40% !important;
+}
+
+@media only screen and (max-width: 900px) {
+  .img1{
+  width: 75px !important;
+  height: 75px !important;
+  margin-top: 200% !important;
+  margin-left: 10% !important;
+  }
 }
 
 .titleep{
