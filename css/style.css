@@ -73,11 +73,15 @@ background-position: center;
 background-repeat: no-repeat;
 background-size: cover;
 position: relative;
-
-margin-top: 5%;
-margin-bottom: 10%;
+display: block;
+margin: 0 auto;
 }
 
+@media screen and (max-width: 860px){
+  .hero-image img{
+    width: 100%;
+  }
+}
 /* Place text in the middle of the image */
 .hero-text {
 text-align: center;
