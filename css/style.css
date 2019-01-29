@@ -43,9 +43,15 @@ a:active,
 a:visited {
   -webkit-transition: color 150ms;
   transition: color 150ms;
-  color: #95a5a6;
+  color: #B9090B;
   text-decoration: none;
 }
+
+.badge-warning {
+  color: violet !important;
+  margin-left: 5px;
+}
+
 a:hover {
   color: #7f8c8d;
   text-decoration: underline;
@@ -96,6 +102,14 @@ color: white;
   top: 22px;
   z-index: 30;
   color: white;
+}
+
+.badge {
+  font-size: 100% !important;
+}
+
+.badge-danger {
+  margin-left: 5px;
 }
 
 .title2{
@@ -321,6 +335,7 @@ hr {
   position: absolute;
   bottom: 0;
   padding: 10px;
+  color: white;
 }
 .row__inner:hover {
   -webkit-transform: translate3d(-62.5px, 0, 0);
