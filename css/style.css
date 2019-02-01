@@ -124,12 +124,9 @@ color: white;
 iframe{
   margin-left: 5%;
 }
-@media screen and (max-width: 860px){
-  iframe{
-  margin-left: -5%;
-  height: 50% !important;
-  width: 50% !important;
-  }
+
+dl, ol, ul {
+  margin-bottom: 0.5rem !important;
 }
 
 .iframe2{
