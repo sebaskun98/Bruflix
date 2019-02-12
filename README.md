@@ -1,10 +1,11 @@
 # Bruflix
-Tema semelhante ao Netflix com Javascript e CSS. Feito como hobbie e para uso pessoal.
+## Description
+Netflix a like platform, for watching some series that already are uploaded on Youtube. This actually is a personal project for my gf. Totally made in Brazilian Portuguese
 
-## Video que usei para o carousel
+## Tutorial that I use to make the index carousel
 https://youtu.be/qBNOBIU5j0o
 
-## Series usadas
+## Series that I use or I'm planning to use
 
 Cory na casa branca:
 http://imaxhdpaginas.hol.es/cory-na-casa-branca/
