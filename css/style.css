@@ -7,7 +7,7 @@ html {
   padding: 0 10px;
   margin: 0;
   background: #0e0f11!important;
-  color: #ecf0f1;
+  color: #ecf0f1!important;
   font-family: 'Roboto Slab', serif;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -51,12 +51,20 @@ h1,
 p {
   text-align: center;
 }
+table {
+  color: #ecf0f1;
+}
 p {
   width: 100%;
   justify-items: auto;
+  color: #ecf0f1;
 }
 .text{
   margin-left: 12%;
+}
+.nav-link {
+  display: block;
+  padding: 0 !important; 
 }
 a:link,
 a:hover,
@@ -166,6 +174,7 @@ hr {
   border-width: 1px 0;
   margin-left: 10%;
   width: 65%;
+  color: #ecf0f1;
 }
 .hr1{
   width: 90% !important;
@@ -206,7 +215,6 @@ hr {
 }
 
 .table1{
-  margin-left: 15%;
   margin-top: 2%;
   top: 22px;
 }
