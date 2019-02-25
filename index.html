@@ -7,10 +7,56 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="shortcut icon" href="favicon.ico"/>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-  <script src="js/index.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <style>
+  #ccl{
+    text-align: center;
+    font-family: sans-serif;
+    color: #fff;
+    display: inline-block;
+    font-weight: 100;
+    text-align: center;
+    font-size: 30px;
+    margin: 0 auto;
+  }
+  
+  #ccl > div{
+    padding: 10px;
+    border-radius: 3px;
+    background: #B9090B;
+    display: inline-block;
+    margin: 0 auto;
+  }
+  
+  #ccl div > span{
+    padding: 15px;
+    border-radius: 3px;
+    background: #0e0f11;
+    display: block;
+  }
+  
+  .smalltext{
+    padding-top: 5px;
+    font-size: 16px;
+  }
+  
+  #finish {
+    text-align: center;
+    display: none;
+    color: white;
+    font-weight: 100;
+    font-size: 40px;
+    
+  }
+  
+  .finish-div{
+    padding: 30px;
+    border-radius: 3px;
+    background: #00BF96;
+    display: inline-block;
+  }</style>
 </head>
 
 <body>
@@ -20,6 +66,32 @@
             <a href="index.html"><img src="https://fontmeme.com/permalink/190125/eed0481a3de9d35cbbb3578c1b8038fc.png" alt="netflix-font" border="0"></a></a>
         </div>
       </div>
+      <!--countdown-->
+    <div class="row">  
+        <div id="ccl">
+            <h1 style="text-align:center;margin:0 auto;">Countdown</h1>
+          <div>
+            <span class="days"></span>
+            <div class="smalltext">Dias</div>
+          </div>
+          <div>
+            <span class="hours"></span>
+            <div class="smalltext">Horas</div>
+          </div>
+          <div>
+            <span class="minutes"></span>
+            <div class="smalltext">Minutos</div>
+          </div>
+          <div>
+            <span class="seconds"></span>
+            <div class="smalltext">Segundos</div>
+          </div>
+        </div>
+        <div id="finish">
+          <div class="finish-div">Feliz Aniversário Meu amor! Te amo Demais <i class="fas fa-heart"></i></div>
+        </div>
+  
+        </div>
     <div class="slider">
         <h3>Live Action</h3>
         <span onmouseover="scrollEsquerda()" onmouseout="clearScroll()" class="handle handlePrev active">
@@ -453,10 +525,61 @@
         <i class="fa fa-caret-right" aria-hidden="true"></i>
       </span>
     </div>
-
-</div>
-
+    </div> 
 
 
+  <script>
+      function getTimeRemaining(endtime) {
+      var t = Date.parse(endtime) - Date.parse(new Date());
+      var seconds = Math.floor((t / 1000) % 60);
+      var minutes = Math.floor((t / 1000 / 60) % 60);
+      var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+      var days = Math.floor(t / (1000 * 60 * 60 * 24));
+      return {
+        'total': t,
+        'days': days,
+        'hours': hours,
+        'minutes': minutes,
+        'seconds': seconds
+      };
+    }
+
+    function initializeClock(id, endtime) {
+      var clock = document.getElementById(id);
+      var daysSpan = clock.querySelector('.days');
+      var hoursSpan = clock.querySelector('.hours');
+      var minutesSpan = clock.querySelector('.minutes');
+      var secondsSpan = clock.querySelector('.seconds');
+
+      function updateClock() {
+        var t = getTimeRemaining(endtime);
+
+        daysSpan.innerHTML = t.days;
+        hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
+        minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+        secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+
+        if (t.total <= 0) {
+          clearInterval(timeinterval);
+        }
+      }
+
+      updateClock();
+      var timeinterval = setInterval(updateClock, 1000);
+    }
+
+    var deadline = new Date(Date.parse(new Date("Feb 27, 2019 00:00:00"))); 
+    initializeClock('ccl', deadline);
+
+    var now = new Date().getTime();
+
+    var distance = deadline - now;
+
+    if (distance < 0) {
+      document.getElementById("ccl").style.display = "none";
+      document.getElementById("finish").style.display = "block";   
+    }
+  </script>
+   <script src="js/index.js"></script>
 </body>
 </html>
